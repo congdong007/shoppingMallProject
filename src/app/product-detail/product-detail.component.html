@@ -1,0 +1,148 @@
+<!-- 商品详情的页头 -->
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons> 
+
+    <ion-title>商品详情</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/cart">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+       
+  </ion-toolbar>
+</ion-header>
+
+<!-- 商品详情内容 -->
+<ion-content>
+  <!-- 产品型号 -->
+  <ion-item>
+    <ion-label>
+      产品型号 : {{productDetails.lname}}
+    </ion-label>
+  </ion-item>
+  <!-- 轮播广告 -->
+  <!-- <ion-slides pager="true">
+    <ion-slide *ngFor="let pic of product.picList">
+      <img [src]="url.host + pic.md" />
+    </ion-slide>
+  </ion-slides> -->
+
+  <!-- 产品详情 -->
+  <ion-card>
+    <img [src]="productDetails.pic" width="400" height="400"/>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{productDetails.title}}</ion-card-title>
+      <ion-card-subtitle>{{productDetails.subtitle}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content style="padding: 0;">
+      <ion-item>
+        <ion-label color="danger">¥{{productDetails.price}}</ion-label>   
+        <ion-button color="danger" size="default">
+          <ion-icon slot="start" name="cart"></ion-icon>
+          添加到购物车
+        </ion-button>            
+      </ion-item>
+      <ion-item>
+        <ion-label>CPU:{{productDetails.cpu}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>内存:{{productDetails.memory}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>硬盘:{{productDetails.disk}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>操作系统:{{productDetails.OS}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-text>承诺:{{productDetails.promise}}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>显卡:{{productDetails.graphics}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>显存:{{productDetails.graphicsmem}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>上市时间:{{productDetails.market_time | date:"yyyy-MM-dd"}}</ion-label>
+      </ion-item> 
+
+      <!-- <ion-item>
+         <ion-grid>
+          <ion-row>
+            <ion-col size="2">CPU:</ion-col>
+            <ion-col size="10">{{productDetails.cpu}}</ion-col>
+          </ion-row>
+         </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">内存:</ion-col>
+            <ion-col size="10">{{productDetails.memory}}</ion-col>
+          </ion-row>
+         </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">硬盘:</ion-col>
+            <ion-col size="10">{{productDetails.disk}}</ion-col>
+          </ion-row>
+         </ion-grid>        
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">操作系统:</ion-col>
+            <ion-col size="10">{{productDetails.OS}}</ion-col>
+          </ion-row>
+         </ion-grid>      
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">承诺:</ion-col>
+            <ion-col size="10">{{productDetails.promise}}</ion-col>
+          </ion-row>
+         </ion-grid> 
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">显卡:</ion-col>
+            <ion-col size="10">{{productDetails.graphics}}</ion-col>
+          </ion-row>
+         </ion-grid> 
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">显存:</ion-col>
+            <ion-col size="10">{{productDetails.graphicsmem}}</ion-col>
+          </ion-row>
+         </ion-grid> 
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">上市时间:</ion-col>
+            <ion-col size="10">{{productDetails.market_time | date:"yyyy-MM-dd"}}</ion-col>
+          </ion-row>
+         </ion-grid> 
+      </ion-item>       -->
+      <!-- 显示html代码片段 -->
+      <div [innerHTML]="productDetails.details | imgUrl"></div>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

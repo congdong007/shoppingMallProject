@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+     <!-- <ion-back-button default-href="/index"></ion-back-button>-->
+     <ion-button (click)="doBack()">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+     </ion-button>
+    </ion-buttons>
+    <ion-text>用户登录</ion-text>
+  </ion-toolbar>
+</ion-header>
+<!-- ion-padding 固定的样式,添加上下左右的间距 -->
+<ion-content class="ion-padding">
+  <ion-card>
+  <ion-item>
+    <ion-label position="floating">
+      用户名:
+    </ion-label>
+    <ion-input [(ngModel)]="username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">
+      密&nbsp;&nbsp;&nbsp;&nbsp;码:
+    </ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+  </ion-card>
+
+  <ion-button expand="block" (click)="doLogin()">登录</ion-button>
+    <!-- H 标签都是带间距的 -->
+    <h5>其他登录方式:</h5>
+  
+  <ion-grid>
+    <ion-row>
+        <ion-col size="2">
+          <ion-button color="danger">
+            <ion-icon slot="icon-only" name="logo-angular"></ion-icon>
+          </ion-button>        
+        </ion-col>
+        <ion-col size="2">
+          <ion-button color="warning">
+            <ion-icon slot="icon-only" name="logo-apple"></ion-icon>
+          </ion-button>        
+        </ion-col> 
+        <ion-col size="2">
+          <ion-button color="success">
+            <ion-icon slot="icon-only" name="logo-css3"></ion-icon>
+          </ion-button>        
+        </ion-col> 
+        <ion-col size="2">
+          <ion-button color="primary">
+            <ion-icon slot="icon-only" name="logo-alipay"></ion-icon>
+          </ion-button>        
+        </ion-col> 
+        <ion-col size="2">
+          <ion-button color="secondary">
+            <ion-icon slot="icon-only" src="../../assets/products/logo-twitter.svg"></ion-icon>
+          </ion-button>        
+        </ion-col> 
+        <ion-col size="2">
+          <ion-button color="tertiary">
+            <ion-icon slot="icon-only" name="logo-firefox"></ion-icon>
+          </ion-button>        
+        </ion-col>          
+    </ion-row>  
+  </ion-grid>
+</ion-content>

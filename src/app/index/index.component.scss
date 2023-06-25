@@ -1,0 +1,43 @@
+swiper-container {
+    width: 100%;
+    height: 100%;
+ 
+    --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #cccccc);
+    --swiper-pagination-color: var(--ion-color-primary, #3880ff);    
+  }
+   
+  swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ion-card{
+    padding: 0;
+    margin: 0;
+  }
+
+  ion-col{
+    padding:3px;
+  }
+
+  ion-card-title,ion-card-subtitle{
+    // 超出部分隐藏掉
+    overflow: hidden;
+    // 不换行
+    white-space: nowrap;
+    // 文本超出部分用...显示
+    text-overflow:ellipsis;
+  }
+
+  ion-card-title{
+    font-size: 20px;
+  }
+  ion-card-header,ion-card-content{
+    padding: 10px;
+  }
+
+  ion-card>img{
+    height: 150px;    
+  }

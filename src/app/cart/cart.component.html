@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+     <!-- <ion-back-button default-href="/index"></ion-back-button>-->
+     <ion-button (click)="doBack()">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+     </ion-button>
+    </ion-buttons>
+    <ion-text>我的购物车</ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="wannaBuyProductList">
+  <ion-card>
+    <ion-item *ngFor="let p of wannaBuyProductList">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text style="font-size: 15px;">{{p.title}}</ion-text> 
+          </ion-col>
+          <ion-col style="display:flex;align-items: center;">
+            <ion-text color="danger">{{p.price | currency:"$"}}</ion-text>
+          </ion-col>
+          <ion-col style="display:flex;align-items: center;justify-content: space-between;">
+            <ion-button color="light" shape="round">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col style="display:flex;align-items: center;">{{p.count}}</ion-col>
+          <ion-col style="display:flex;align-items: center;justify-content: space-between;">
+            <ion-button shape="round">
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card>
+  <div style="display: flex;flex-direction: row-reverse;">
+    <ion-button color="success">去结算</ion-button>
+  </div>
+</ion-content>
+<!-- <ion-content class="ion-padding">
+  <ion-item *ngFor="let p of wannaBuyProductList">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-card>  
+            <ion-card-title>
+              {{p.title}}
+            </ion-card-title>
+            <ion-card-subtitle>
+              {{p.subtitle}}
+            </ion-card-subtitle>
+          </ion-card>
+        </ion-col>
+        <ion-col size="2">
+        <ion-text color="danger">{{p.price | currency:"$"}}</ion-text>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button color="light" shape="round">
+          <ion-icon name="remove-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="2">
+        <ion-text>{{p.count}}</ion-text>
+        </ion-col>
+        <ion-col size="2">
+        <ion-button shape="round">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>    
+    </ion-grid>
+  </ion-item>
+</ion-content> -->
