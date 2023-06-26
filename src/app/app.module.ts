@@ -21,9 +21,9 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-
-import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
 import { MycarouselComponent } from './mycarousel/mycarousel.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 registerLocaleData(en);
 
@@ -47,10 +47,13 @@ registerLocaleData(en);
     IonicModule.forRoot(),  //ion-xxx
     AppRoutingModule,
     HttpClientModule, // httpclient
-    FormsModule, BrowserAnimationsModule // ngModel
-    ,
+    FormsModule, 
+    BrowserAnimationsModule, 
+    NgZorroAntdMobileModule, // ngModel
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  
 })
 export class AppModule {}

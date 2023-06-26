@@ -1,3 +1,30 @@
-<p>
-  mycarousel works!
-</p>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Ionic Swiper </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goPrev()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goNext()">
+        <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content scrollY="false">
+  <swiper-container
+    #swiper
+    (afterinit)="swiperReady()"
+    (slidechange)="swiperSlideChanged($event)"
+    [loop]="true"
+    [pagination]="true"
+    [zoom]="true"
+  >
+    <swiper-slide *ngFor="let image of images">
+      <div class="swiper-zoom-container">
+        <img [src]="image" />
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
