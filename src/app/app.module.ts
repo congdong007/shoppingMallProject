@@ -23,6 +23,7 @@ import en from '@angular/common/locales/en';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { MycarouselComponent } from './mycarousel/mycarousel.component';
 
 registerLocaleData(en);
 
@@ -37,6 +38,7 @@ registerLocaleData(en);
     ProductListComponent,
     ProductDetailComponent,
     UserLoginComponent,
+    MycarouselComponent,
     ImgUrlPipe,
     
   ],
